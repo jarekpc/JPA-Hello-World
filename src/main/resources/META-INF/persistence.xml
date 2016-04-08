@@ -1,0 +1,26 @@
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
+	<persistence-unit name="HelloWorldCPU"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- <jta-data-source>myDS</jta-data-source> -->
+		<class>com.jarek.zyzak.Message</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<!-- <property name="javax.persistence.schema-generation.database.action" 
+				value="drop-and-create" /> -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:~/test" />
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<!-- <property name="dialect"> org.hibernate.dialect.H2Dialect</property> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+
+			<!-- EclipseLink should create the database schema automatically -->
+			 <property name="javax.persistence.schema-generation.database.action" value="create-drop"/>
+		</properties>
+	</persistence-unit>
+</persistence>
