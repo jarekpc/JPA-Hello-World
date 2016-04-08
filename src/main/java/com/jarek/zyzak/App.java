@@ -27,7 +27,7 @@ public class App
     	em.close();
     	
     	listAll(emf);//
-    }
+    } 
     
     public static void listAll(EntityManagerFactory emf ){
     	System.out.println("ListAll");
